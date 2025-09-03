@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Тест: Информация — свойства и виды</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #bbdefb);
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+    }
+
+    h1 {
+      text-align: center;
+      color: #0277bd;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    p.intro {
+      text-align: center;
+      color: #555;
+      font-size: 1.1em;
+      margin-bottom: 30px;
+    }
+
+    .question {
+      margin-bottom: 25px;
+      padding: 15px;
+      background: #f5f9ff;
+      border-left: 5px solid #2196f3;
+      border-radius: 8px;
+    }
+
+    .question h3 {
+      margin-top: 0;
+      color: #0d47a1;
+    }
+
+    .options {
+      list-style: none;
+      padding: 0;
+    }
+
+    .options li {
+      margin: 10px 0;
+    }
+
+    .options input {
+      margin-right: 8px;
+    }
+
+    .options label {
+      cursor: pointer;
+      color: #333;
+      transition: color 0.2s;
+    }
+
+    .options label:hover {
+      color: #0277bd;
+    }
+
+    button {
+      display: block;
+      margin: 30px auto;
+      padding: 12px 30px;
+      font-size: 1.1em;
+      background-color: #0288d1;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(2, 136, 209, 0.3);
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #0277bd;
+      transform: scale(1.05);
+    }
+
+    #result {
+      margin-top: 30px;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.3em;
+      font-weight: 600;
+      color: #0d47a1;
+      background: #e3f2fd;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .correct {
+      color: #2e7d32;
+    }
+
+    .incorrect {
+      color: #c62828;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Тест по теме "Информация: свойства, виды"</h1>
+    <p class="intro">Ответьте на 5 вопросов о свойствах и видах информации. В конце вы увидите результат.</p>
+
+    <form id="quizForm">
+      <!-- Вопрос 1 -->
+      <div class="question">
+        <h3>1. Какое свойство информации означает её соответствие реальному положению дел?</h3>
+        <ul class="options">
+          <li><input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Актуальность</label></li>
+          <li><input type="radio" name="q1" value="b" id="q1b"><label for="q1b">Достоверность</label></li>
+          <li><input type="radio" name="q1" value="c" id="q1c"><label for="q1c">Полнота</label></li>
+          <li><input type="radio" name="q1" value="d" id="q1d"><label for="q1d">Понятность</label></li>
+        </ul>
+      </div>
+
+      <!-- Вопрос 2 -->
+      <div class="question">
+        <h3>2. Какой вид информации передаётся с помощью запахов?</h3>
+        <ul class="options">
+          <li><input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Зрительная</label></li>
+          <li><input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Обонятельная</label></li>
+          <li><input type="radio" name="q2" value="c" id="q2c"><label for="q2c">Осязательная</label></li>
+          <li><input type="radio" name="q2" value="d" id="q2d"><label for="q2d">Слуховая</label></li>
+        </ul>
+      </div>
+
+      <!-- Вопрос 3 -->
+      <div class="question">
+        <h3>3. Что из перечисленного НЕ является свойством информации?</h3>
+        <ul class="options">
+          <li><input type="radio" name="q3" value="a" id="q3a"><label for="q3a">Доступность</label></li>
+          <li><input type="radio" name="q3" value="b" id="q3b"><label for="q3b">Объективность</label></li>
+          <li><input type="radio" name="q3" value="c" id="q3c"><label for="q3c">Материальность</label></li>
+          <li><input type="radio" name="q3" value="d" id="q3d"><label for="q3d">Ценность</label></li>
+        </ul>
+      </div>
+
+      <!-- Вопрос 4 -->
+      <div class="question">
+        <h3>4. Какой вид информации воспринимается через кожу?</h3>
+        <ul class="options">
+          <li><input type="radio" name="q4" value="a" id="q4a"><label for="q4a">Зрительная</label></li>
+          <li><input type="radio" name="q4" value="b" id="q4b"><label for="q4b">Обонятельная</label></li>
+          <li><input type="radio" name="q4" value="c" id="q4c"><label for="q4c">Осязательная</label></li>
+          <li><input type="radio" name="q4" value="d" id="q4d"><label for="q4d">Слуховая</label></li>
+        </ul>
+      </div>
+
+      <!-- Вопрос 5 -->
+      <div class="question">
+        <h3>5. Какое свойство информации означает, что она важна и полезна для пользователя?</h3>
+        <ul class="options">
+          <li><input type="radio" name="q5" value="a" id="q5a"><label for="q5a">Актуальность</label></li>
+          <li><input type="radio" name="q5" value="b" id="q5b"><label for="q5b">Понятность</label></li>
+          <li><input type="radio" name="q5" value="c" id="q5c"><label for="q5c">Ценность</label></li>
+          <li><input type="radio" name="q5" value="d" id="q5d"><label for="q5d">Достоверность</label></li>
+        </ul>
+      </div>
+
+      <button type="button" onclick="checkResults()">Проверить результат</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function checkResults() {
+      const correctAnswers = {
+        q1: "b",
+        q2: "b",
+        q3: "c",
+        q4: "c",
+        q5: "c"
+      };
+
+      let score = 0;
+      const total = Object.keys(correctAnswers).length;
+
+      // Проверка ответов
+      for (const [key, correct] of Object.entries(correctAnswers)) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === correct) {
+          score++;
+        }
+      }
+
+      // Отображение результата
+      const resultDiv = document.getElementById("result");
+      resultDiv.style.display = "block";
+
+      if (score === total) {
+        resultDiv.innerHTML = `<span class="correct">Отлично! ${score} из ${total} — идеально!</span>`;
+      } else if (score >= total * 0.7) {
+        resultDiv.innerHTML = `<span class="correct">Хорошо! ${score} из ${total} — вы молодец!</span>`;
+      } else {
+        resultDiv.innerHTML = `<span class="incorrect">Повторите тему. ${score} из ${total} — можно лучше.</span>`;
+      }
+    }
+  </script>
+</body>
+</html>
